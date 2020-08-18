@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo list Vue</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="form-div">
+        <form v-on:submit.prevent>
+          <h1>Add a todo</h1>
+          <input
+            autocomplete="off"
+            autofocus
+            v-model="todoInp"
+            type="text"
+            id="name"
+            placeholder="Add a todo"
+          />
+          <input
+            type="submit"
+            value="Add todo"
+            class="add-btn"
+            v-on:click="addTodo()"
+          />
+        </form>
+      </div>
+      <div class="todo-list">
+        <h3>Incomplete</h3>
+        <ul>
+          <li
+            v-for="(todo, index) in todos"
+            v-bind:key="index"
+            v-bind:class="{done: todo.isDone}"
+            v-if="todo.isDone === false"
+          >
+            {{todo.name}}
+            <div class="btn-div">
+              <button class="done-btn" v-on:click="done(todo.id)">
+                Done
+              </button>
+              <button class="delete-btn" v-on:click="deleteTodo(index)">
+                Delete
+              </button>
+            </div>
+          </li>
+        </ul>
+        <h3>Complete</h3>
+        <ul>
+          <li
+            v-for="(todo, index) in todos"
+            v-bind:key="index"
+            v-if="todo.isDone === true"
+            v-bind:class="{done: todo.isDone}"
+          >
+            {{todo.name}}
+            <div class="btn-div">
+              <button class="undo-btn" v-on:click="undo(todo.id)">
+                Undo
+              </button>
+              <button class="delete-btn" v-on:click="deleteTodo(index)">
+                Delete
+              </button>
+            </div>
+          </li>
+        </ul>
+        <button class="clear-btn" v-on:click="clearTodos()">
+          Clear all
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
