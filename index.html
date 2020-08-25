@@ -37,13 +37,32 @@
             v-bind:class="{done: todo.isDone}"
             v-if="todo.isDone === false"
           >
-            {{todo.name}}
+            <p v-if="!todo.edit">{{todo.name}}</p>
+            <input type="text" v-model="todo.name" v-if="todo.edit" />
             <div class="btn-div">
-              <button class="done-btn" v-on:click="done(todo.id)">
+              <button
+                class="done-btn"
+                v-on:click="done(todo.id)"
+                v-if="!todo.edit"
+              >
                 Done
               </button>
-              <button class="delete-btn" v-on:click="deleteTodo(index)">
+              <button
+                class="edit-btn"
+                v-on:click="editTodo(todo.id)"
+                v-if="!todo.edit"
+              >
+                Edit
+              </button>
+              <button
+                class="delete-btn"
+                v-on:click="deleteTodo(index)"
+                v-if="!todo.edit"
+              >
                 Delete
+              </button>
+              <button class="save-btn" v-if="todo.edit" v-on:click="saveEditedTodo(todo.id)">
+                Save
               </button>
             </div>
           </li>

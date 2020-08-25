@@ -3,14 +3,16 @@ const app = new Vue({
   data: {
     todos: [],
     todoInp: '',
+    editData: ''
   },
   methods: {
     addTodo: function() {
       if(this.todoInp !== '') {
         this.todos.push({
-          id: this.todos.length + 1,
+          id: new Date(),
           name: this.todoInp,
-          isDone: false
+          isDone: false,
+          edit: false
         });
         this.todoInp = '';
       } else {
@@ -21,23 +23,36 @@ const app = new Vue({
       this.todos.splice(id, 1);
     },
     done: function(id) {
-      this.todos = this.todos.map(todo => {
+      this.todos.forEach(todo => {
         if(todo.id === id) {
           todo.isDone = true;
         }
-        return todo
       });
     },
     undo: function(id) {
-      this.todos = this.todos.map(todo => {
+      this.todos.forEach(todo => {
         if(todo.id === id) {
           todo.isDone = false;
         }
-        return todo
-      });
+      })
     },
     clearTodos: function() {
       this.todos = [];
+    },
+    editTodo: function(id) {
+      this.todos.forEach(todo => {
+        if(todo.id === id) {
+          todo.edit = true;
+        }
+      });
+    },
+    saveEditedTodo: function(id) {
+      this.todos.forEach(todo => {
+        if(todo.id === id) {
+          todo.name = todo.name;
+          todo.edit = false;
+        }
+      })
     }
   },
 });

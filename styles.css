@@ -104,6 +104,38 @@
   background-color: #28b33b;
 }
 
+.edit-btn {
+  background: none;
+  color: #1c8ba7;
+  padding: 5px 10px;
+  border: 1px solid #1c8ba7;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease-in all;
+}
+
+.edit-btn:hover {
+  color: #fff;
+  background-color: #1c8ba7;
+}
+
+.save-btn {
+  background: none;
+  color: #28b33b;
+  padding: 5px 10px;
+  border: 1px solid #28b33b;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease-in all;
+}
+
+.save-btn:hover {
+  color: #fff;
+  background-color: #28b33b;
+}
+
 .delete-btn {
   background: none;
   color: #fa3434;
