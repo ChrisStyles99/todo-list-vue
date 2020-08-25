@@ -38,7 +38,7 @@
             v-if="todo.isDone === false"
           >
             <p v-if="!todo.edit">{{todo.name}}</p>
-            <input type="text" v-model="todo.name" v-if="todo.edit" />
+            <input class="edit-input" type="text" v-model="todo.name" v-if="todo.edit" />
             <div class="btn-div">
               <button
                 class="done-btn"
