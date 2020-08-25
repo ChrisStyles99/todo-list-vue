@@ -43,6 +43,7 @@
   cursor: pointer;
   transition: 0.3s ease-in all;
   font-size: 1rem;
+  outline: none;
 }
 
 .form-div form input[type="submit"]:hover {
@@ -55,6 +56,7 @@
   font-size: 1rem;
   border-radius: 12px;
   border: 1px solid #000;
+  outline: none;
 }
 
 .todo-list {
@@ -105,6 +107,7 @@
   cursor: pointer;
   font-size: 1rem;
   transition: 0.3s ease-in all;
+  outline: none;
 }
 
 .done-btn:hover {
@@ -121,6 +124,7 @@
   cursor: pointer;
   font-size: 1rem;
   transition: 0.3s ease-in all;
+  outline: none;
 }
 
 .edit-btn:hover {
@@ -137,6 +141,7 @@
   cursor: pointer;
   font-size: 1rem;
   transition: 0.3s ease-in all;
+  outline: none;
 }
 
 .save-btn:hover {
@@ -153,6 +158,7 @@
   cursor: pointer;
   font-size: 1rem;
   transition: 0.3s ease-in all;
+  outline: none;
 }
 
 .delete-btn:hover {
@@ -175,6 +181,7 @@
   text-align: center;
   cursor: pointer;
   transition: 0.3s ease-in all;
+  outline: none;
 }
 
 .clear-btn:hover {
@@ -191,6 +198,7 @@
   cursor: pointer;
   font-size: 1rem;
   transition: 0.3s ease-in all;
+  outline: none;
 }
 
 .undo-btn:hover {
